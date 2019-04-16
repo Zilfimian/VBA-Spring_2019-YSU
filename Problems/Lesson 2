@@ -1,0 +1,271 @@
+#==========================================================
+#======Խնդիր 1 (If statement + Variable types + MsgBox)====
+#==========================================================
+
+
+Գտնել տրված 2 իրական թվերից փոքրագույն արժեքի և այդ երկու թվերի արտադյալի գումարը`
+
+Sub Problem1()
+Dim a As Double, b As Double
+Dim d As Double
+
+
+a = InputBox("Please, input the values of a")
+b = InputBox("Please, input the values of b")
+
+If a <= b Then
+d = a + a * b
+
+MsgBox "The answer is " & d
+
+Else
+d = b + a * b
+MsgBox "The answer is " & d
+
+End If
+
+End Sub
+
+#==========================================================
+#======Խնդիր 2 (For loop + Functions + checking)===========
+#==========================================================
+
+
+Հաշվել n-չափանի տարածության մեջ 2 k-չափանի վեկտորների սկալյար արտադրյալը
+
+
+Public Function innerprod(X As Double, Y As Double)
+
+Dim n As Integer
+
+Dim k As Integer
+
+k = X.Count
+
+For n = 1 To k
+
+oursum = oursum + X(n) * Y(n)
+
+Next
+
+innerptod = oursum
+
+End Function
+
+Լուծել հետևյալ խնդիրը նախորդի աշխատանքը ստուգելու համար
+#==========================================================
+#======================Խնդիր 3 / շարունակություն/==========
+#==========================================================
+
+Public Sub volume()
+
+Const pi As Single = 3.14
+
+Dim r, h, v As Single
+
+r = Worksheets(1).Range("a2").Value
+
+h = Worksheets(1).Range("b2").Value
+
+v = pi * r ^ 2 * h
+
+
+Worksheets(1).Cells(2, 3).Value = v
+
+End Sub
+
+#==========================================================
+#======================Խնդիր 4=============================
+#==========================================================
+Գտնել Ֆունկցիայի արժեքը
+
+
+Public Sub primer()
+
+Dim x As Integer
+Dim y As Single
+
+x = Val(InputBox("Please input x"))
+
+If x > 3 Then
+
+y = Log(x - 3) + Sin(x)
+
+MsgBox "x=" & x & "  y=" & y
+Else
+
+MsgBox "x must be greater than 3"
+
+End If
+End Sub
+
+#==========================================================
+#======================Խնդիր 5=============================
+#==========================================================
+
+Պարզել արդյոք ներմուծած (x,y) կոորդինատով կետերը ընկնում են r շառավղով շրջանագծի մեջ թե չէ։
+Շառավղի կենտրոնը կոորդինատների սկզբնակետն է։
+
+
+
+Public Sub tochka()
+Dim x, y, r As Integer
+Dim s As Single
+
+x = InputBox("x=")
+y = InputBox("y=")
+r = InputBox("r=")
+
+s = Sqr(x ^ 2 + y ^ 2)
+
+If s <= r Then
+MsgBox "Contains"
+Else
+MsgBox "Does not contain"
+End If
+End Sub
+
+
+#==========================================================
+#======================Խնդիր 6=============================
+#==========================================================
+
+Պարզել ներմուծված թվի նշանը
+
+
+Public Sub name()
+
+Dim x As Integer
+x = InputBox(" x = ")
+Select Case x
+
+Case Is < 0: MsgBox "negative"
+Case Is > 0: MsgBox "positive"
+Case Is = 0: MsgBox " equals 0"
+
+End Select
+End Sub
+
+#==========================================================
+#======================Խնդիր 7=============================
+#==========================================================
+
+Հաշվել հետևյալ ֆունկցիայի արժեքը [a,b] միջակայքում, դրական քայով
+
+
+Sub new_sub()
+
+Dim a As Double, b As Double, step As Double
+Dim x As Double, y As Double
+
+a = InputBox("a=")
+
+b = InputBox("b=")
+
+step = InputBox("step=")
+
+For x = a To b Step step
+
+If x > 0 Then
+
+y = Sin(x)
+
+Else
+
+y = Cos(x)
+
+End If
+
+MsgBox "x=" & x & "y=" & y
+
+Next x
+End Sub
+
+#==========================================================
+#======================Խնդիր 8=============================
+#==========================================================
+
+Գտնել mxn  չափանի իրական մատրիցի ոչ բացասական թվերի քանակը
+
+Option Base 1
+
+Sub new_sub()
+Const n As Double = 2
+Const m As Double = 2
+
+Dim countofnonnegatives As Integer
+
+Dim A(n, m) As Double
+
+countofnonnegatives = 0
+
+For Each a In 
+A(i, j) = InputBox("Please, enter the numbers of arrays")
+
+If A(i, j) >= 0 Then countofnonnegatives = countofnonnegatives + 1
+
+Next j
+Next i
+
+MsgBox countofnonnegatives
+
+End Sub
+
+
+#==========================================================
+#======================Խնդիր 9=============================
+#==========================================================
+
+Ունենք հետևյալ վեկտորը՝ vec = (5,15,115,200,8,9,11)։ Հաշվել զանգվածի այն տարրերի քանակը, որոնք բազմապատիկ են 5-ին:
+
+Sub countmod()
+Dim Vector As Variant
+Dim k As Integer
+Dim a As Variant
+
+Vector = Array(5, 15, 115, 200, 8, 9, 11)
+
+countoffive = 0
+For Each a In Vector
+
+If a Mod 5 = 0 Then countoffive = countoffive + 1
+
+Next a
+
+Debug.Print countoffive
+
+End Sub
+
+
+#==========================================================
+#======================Խնդիր 10============================
+#==========================================================
+#1
+Public Sub test12()
+
+Dim a As Boolean
+Dim b As Boolean
+a = True
+b = False
+
+
+MsgBox (b And a) Or Not (a And b) Xor b
+
+End Sub
+
+#==========================================================
+#======================Խնդիր 11============================
+#==========================================================
+Ի՞նչ կարտածվի տրված ծրագրի աշխատանքի արդյունքում. 
+
+Public Sub b()
+Const n As Integer = 75
+  If n Mod 15 = 5 Then MsgBox n - n Mod 10 & "   " & n / 1.2
+m = Sqr(n Mod 5 + 1) + 1 \ 1.9
+MsgBox m
+If m Mod 15 = 5 Then MsgBox m - m Mod 10 & "   " & m / 1.2
+End Sub
+
+
+If m Mod 15 = 5 Then MsgBox m - m Mod 10 & "   " & m / 1.2
+End Sub
