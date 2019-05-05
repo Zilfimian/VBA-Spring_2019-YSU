@@ -1,1 +1,134 @@
- 
+#==========================================================
+#======================Problem 12 =========================
+#==========================================================
+Calculate the factorial of n natural numbers
+
+Option Explicit
+Sub factNum()
+
+Dim n As Integer, i As Integer, nf As Integer
+
+n = InputBox("Input Some number")
+nf = 1
+
+For i = 2 To n
+nf = nf * i
+Next i
+
+MsgBox n & "!=" & nf
+
+End Sub
+
+#==========================================================
+#======================While Wend==========================
+#==========================================================
+
+Sub whilewend()
+
+Dim Counter As Integer
+
+Counter = 0 ' Initialize variable.
+
+While Counter < 20 ' Test value of Counter.
+ Counter = Counter + 1 ' Increment Counter.
+Wend ' End While loop when Counter > 19.
+
+Debug.Print Counter ' Prints 20 in the Immediate window.
+
+End Sub
+
+#==========================================================
+#======================Do While============================
+#==========================================================
+
+Sub dowhileloop()
+
+i = 0
+
+Do While i < 20
+      i = i + 1
+     Debug.Print "The value of i is : " & i
+   Loop
+
+End Sub
+
+#==========================================================
+#======================Do Until============================
+#==========================================================
+Sub dowhileloop()
+
+i = 0
+
+Do Until i > 20
+      i = i + 1
+     Debug.Print "The value of i is : " & i
+   Loop
+
+End Sub
+
+#==========================================================
+#======================Խնդիր 13============================
+#==========================================================
+I deposited x$. How many days do I wait to have 20,000$ rubles, if the interest is 0.6% per day.
+
+Option Explicit
+
+Sub PR12()
+
+Dim V As Double 'initial sum
+
+Dim Mon As Integer 'days
+
+V = Val(InputBox("Initial Sum"))
+
+Mon = 0
+
+While V <= 20000
+
+V = V + V * 0.6 / 100
+
+Mon = Mon + 1
+
+Wend
+
+MsgBox ("20000 will be in " & Mon & "days")
+
+End Sub
+
+
+#==========================================================
+#======================Խնդիր 14============================
+#==========================================================
+
+
+Sub mydeposit()
+
+Dim p As Double, r As Single, n As Single
+Dim t As Single, FD As Double
+
+p = InputBox("p=")
+r = InputBox("r=")
+n = InputBox("n=")
+t = InputBox("t=")
+
+FD = p * (1 + r / n) ^ (n * t)
+
+MsgBox FD
+
+End Sub
+
+
+#====================================================
+Sub deposit()
+End Sub
+Sub depositmy()
+Public Function mydeposit(p As Double, r As Single, n As Single, t As Single)
+
+Dim FD As Double
+
+FD = p * (1 + r / n) ^ (n * t)
+
+mydeposit = FD
+
+End Function
+End Function
